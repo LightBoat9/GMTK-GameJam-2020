@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CGM3_Dialogue_Text_01_1.wav-22defb832e1703148e396a15951ef6f2.sample"
+
+[deps]
+
+source_file="res://audio/ui/CGM3_Dialogue_Text_01_1.wav"
+dest_files=[ "res://.import/CGM3_Dialogue_Text_01_1.wav-22defb832e1703148e396a15951ef6f2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://events/event_option.gd" type="Script" id=1]
+[ext_resource path="res://events/class_choice/start_ranger.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+text = "Start as Ranger"
+results = [ ExtResource( 2 ) ]
+require_type = 0
+require = 0

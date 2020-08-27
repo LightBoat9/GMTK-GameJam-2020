@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://events/event.gd" type="Script" id=1]
+[ext_resource path="res://events/trapped_traveler/trapped_traveler.png" type="Texture" id=2]
+[ext_resource path="res://events/trapped_traveler/option_1.tres" type="Resource" id=3]
+[ext_resource path="res://events/trapped_traveler/option_2.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+text = "You find a traveler trapped under a fallen tree limb."
+options = [ ExtResource( 3 ), ExtResource( 4 ) ]
+health_change = 0
+mood_change = 0
+strength_change = 0
+agility_change = 0
+intelligence_change = 0
+event_str = 3
+event_agi = 0
+event_int = 2

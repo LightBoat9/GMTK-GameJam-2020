@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://events/event.gd" type="Script" id=1]
+[ext_resource path="res://events/icons/intelligence_fail.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+text = "Your wits fail you. (-1 Health)"
+options = [  ]
+health_change = -1
+mood_change = 0
+strength_change = 0
+agility_change = 0
+intelligence_change = 0
+event_str = 0
+event_agi = 0
+event_int = 0

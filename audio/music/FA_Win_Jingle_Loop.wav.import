@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FA_Win_Jingle_Loop.wav-cb5a0beb63ca7d937cc907178d7ee57a.sample"
+
+[deps]
+
+source_file="res://audio/music/FA_Win_Jingle_Loop.wav"
+dest_files=[ "res://.import/FA_Win_Jingle_Loop.wav-cb5a0beb63ca7d937cc907178d7ee57a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

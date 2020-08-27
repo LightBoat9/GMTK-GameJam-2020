@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://events/event.gd" type="Script" id=1]
+[ext_resource path="res://events/chest/chest.png" type="Texture" id=2]
+[ext_resource path="res://events/chest/chest_option_1.tres" type="Resource" id=3]
+[ext_resource path="res://events/chest/chest_option_2.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+text = "You come across a chest."
+options = [ ExtResource( 3 ), ExtResource( 4 ) ]
+health_change = 0
+mood_change = 0
+strength_change = 0
+agility_change = 0
+intelligence_change = 0
+event_str = 0
+event_agi = 0
+event_int = 0

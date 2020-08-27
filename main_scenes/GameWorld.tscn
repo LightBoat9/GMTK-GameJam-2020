@@ -1,0 +1,291 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://theme/theme.tres" type="Theme" id=1]
+[ext_resource path="res://board/stats/Stats.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/music/Funky Chill 2 loop.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/ui/CGM3_Dialogue_Text_01_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/ui/CGM3_Dialogue_Text_01_1.wav" type="AudioStream" id=5]
+[ext_resource path="res://board/Board.tscn" type="PackedScene" id=6]
+[ext_resource path="res://main_scenes/final_screen.gd" type="Script" id=7]
+[ext_resource path="res://fonts/kenney_fontpackage(2)/Fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://audio/music/FA_Lose_Jingle_Loop.wav" type="AudioStream" id=9]
+[ext_resource path="res://audio/music/FA_Win_Jingle_Loop.wav" type="AudioStream" id=10]
+[ext_resource path="res://game_master/GameMaster.tscn" type="PackedScene" id=12]
+[ext_resource path="res://singletons/game_manager.gd" type="Script" id=14]
+[ext_resource path="res://options_manager/options_button.png" type="Texture" id=15]
+[ext_resource path="res://options_manager/options_button_hovered.png" type="Texture" id=16]
+[ext_resource path="res://options_manager/options_button_pressed.png" type="Texture" id=17]
+[ext_resource path="res://options_manager/options.gd" type="Script" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 8 )
+
+[node name="GameWorld" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -53.2921 ],
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.14902, 0.168627, 0.266667, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer"]
+margin_top = 51.0
+margin_right = 640.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 32.0
+margin_right = -8.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" parent="VBoxContainer/ColorRect2/VBoxContainer" instance=ExtResource( 2 )]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/ColorRect2/VBoxContainer"]
+margin_top = 72.0
+margin_right = 624.0
+margin_bottom = 269.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Board" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2" instance=ExtResource( 6 )]
+
+[node name="Options" type="GridContainer" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2"]
+margin_left = 392.0
+margin_top = 74.0
+margin_right = 545.0
+margin_bottom = 122.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+columns = 2
+script = ExtResource( 18 )
+
+[node name="Option1" type="TextureButton" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+margin_right = 153.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "16 Letters"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option2" type="TextureButton" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+visible = false
+margin_right = 153.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Roll Dice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option3" type="TextureButton" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+visible = false
+margin_right = 153.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Roll Dice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option4" type="TextureButton" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+visible = false
+margin_right = 153.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Roll Dice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option5" type="TextureButton" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+visible = false
+margin_right = 153.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Roll Dice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option6" type="TextureButton" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+visible = false
+margin_right = 153.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Roll Dice"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UIRoll" type="AudioStreamPlayer" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+stream = ExtResource( 4 )
+
+[node name="UISelect" type="AudioStreamPlayer" parent="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options"]
+stream = ExtResource( 5 )
+
+[node name="GameMaster" parent="." instance=ExtResource( 12 )]
+
+[node name="MusicLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="MusicLose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="MusicWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="FinalScreen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="FinalScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0941176, 0.0784314, 0.145098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FinalScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.5
+margin_top = -46.0
+margin_right = 76.5
+margin_bottom = 46.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="FinalScreen/VBoxContainer"]
+margin_right = 153.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
+text = "You Lose!"
+align = 1
+
+[node name="PlayButton" type="TextureButton" parent="FinalScreen/VBoxContainer"]
+margin_top = 44.0
+margin_right = 153.0
+margin_bottom = 92.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="FinalScreen/VBoxContainer/PlayButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Play Again"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option1" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_rolled" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option1" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_pressed" binds= [ 0 ]]
+[connection signal="mouse_entered" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option2" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_rolled" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option2" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_pressed" binds= [ 1 ]]
+[connection signal="mouse_entered" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option3" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_rolled" binds= [ 2 ]]
+[connection signal="pressed" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option3" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_pressed" binds= [ 2 ]]
+[connection signal="mouse_entered" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option4" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_rolled" binds= [ 3 ]]
+[connection signal="pressed" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option4" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_pressed" binds= [ 3 ]]
+[connection signal="mouse_entered" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option5" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_rolled" binds= [ 4 ]]
+[connection signal="pressed" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option5" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_pressed" binds= [ 4 ]]
+[connection signal="mouse_entered" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option6" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_rolled" binds= [ 5 ]]
+[connection signal="pressed" from="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options/Option6" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_pressed" binds= [ 5 ]]
+[connection signal="mouse_entered" from="FinalScreen/VBoxContainer/PlayButton" to="VBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Options" method="_on_option_rolled" binds= [ 6 ]]
+[connection signal="pressed" from="FinalScreen/VBoxContainer/PlayButton" to="FinalScreen" method="_on_PlayButton_pressed"]

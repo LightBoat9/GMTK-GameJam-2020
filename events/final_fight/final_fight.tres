@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://events/event.gd" type="Script" id=1]
+[ext_resource path="res://events/final_fight/option_1.tres" type="Resource" id=2]
+[ext_resource path="res://events/final_fight/option_2.tres" type="Resource" id=3]
+[ext_resource path="res://events/final_fight/option_3.tres" type="Resource" id=4]
+[ext_resource path="res://events/final_fight/final_fight.png" type="Texture" id=5]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 5 )
+text = "You approach the final boss, a stone golem with no visible weakness."
+options = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
+health_change = 0
+mood_change = 0
+strength_change = 0
+agility_change = 0
+intelligence_change = 0
+event_str = 3
+event_agi = 3
+event_int = 3

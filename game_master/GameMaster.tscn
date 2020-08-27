@@ -1,0 +1,181 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://game_master/game_master.png" type="Texture" id=1]
+[ext_resource path="res://game_master/faces/happy.png" type="Texture" id=2]
+[ext_resource path="res://game_master/dialogue/dialogue_bg.png" type="Texture" id=3]
+[ext_resource path="res://game_master/faces/angry.png" type="Texture" id=4]
+[ext_resource path="res://theme/theme.tres" type="Theme" id=5]
+[ext_resource path="res://game_master/game_master.gd" type="Script" id=6]
+[ext_resource path="res://board/dice/Dice.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game_master/faces/normal.png" type="Texture" id=8]
+[ext_resource path="res://audio/game_master/CGM3_Funny_Negative_Feedback_01_1.wav" type="AudioStream" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 315, 69 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "init"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dice:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 315, 69 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 315, 0, 315, 69 ), Rect2( 630, 0, 315, 69 ), Rect2( 945, 0, 315, 69 ), Rect2( 1260, 0, 315, 69 ), Rect2( 945, 0, 315, 69 ), Rect2( 1260, 0, 315, 69 ), Rect2( 1575, 0, 315, 69 ), Rect2( 0, 0, 315, 69 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dice:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dice:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 18.3722, 72.9486 ), Vector2( -33.3552, 184.975 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Dice")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "randomize_face"
+} ]
+}
+
+[node name="GameMaster" type="TextureRect"]
+margin_left = 162.844
+margin_top = 17.9262
+margin_right = 478.844
+margin_bottom = 86.9262
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 5 )
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Faces" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FaceHappy" type="TextureRect" parent="Faces"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FaceNormal" type="TextureRect" parent="Faces"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FaceAngry" type="TextureRect" parent="Faces"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+
+[node name="TextBox" type="TextureRect" parent="."]
+margin_left = 34.7937
+margin_top = 37.8042
+margin_right = 245.794
+margin_bottom = 84.8042
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextBox"]
+margin_left = 12.0
+margin_top = 18.0
+margin_right = 235.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time to play!"
+align = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="TextBox"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/init = SubResource( 2 )
+anims/throw = SubResource( 3 )
+
+[node name="Dice" parent="." instance=ExtResource( 7 )]
+visible = false
+margin_left = -33.3552
+margin_top = 184.975
+margin_right = -17.3552
+margin_bottom = 198.975
+
+[node name="NegativeFeedback" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Effects"

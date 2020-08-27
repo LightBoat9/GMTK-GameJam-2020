@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://events/event.gd" type="Script" id=1]
+[ext_resource path="res://events/combat/skeleton.png" type="Texture" id=2]
+[ext_resource path="res://events/combat/skeletons/option_1.tres" type="Resource" id=3]
+[ext_resource path="res://events/combat/skeletons/option_3.tres" type="Resource" id=4]
+[ext_resource path="res://events/combat/skeletons/option_2.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+text = "You come across a group of deadly skeletons."
+options = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ]
+health_change = 0
+mood_change = 0
+strength_change = 0
+agility_change = 0
+intelligence_change = 0
+event_str = 3
+event_agi = 1
+event_int = 2

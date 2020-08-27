@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FA_Lose_Jingle_Loop.wav-c7a32c4d58c8ff4bc89bc6e37fd8ef7a.sample"
+
+[deps]
+
+source_file="res://audio/music/FA_Lose_Jingle_Loop.wav"
+dest_files=[ "res://.import/FA_Lose_Jingle_Loop.wav-c7a32c4d58c8ff4bc89bc6e37fd8ef7a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
